@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css" integrity="sha512-7exGAnRoaHLuhukDlCpSYr0i9q0oXSzkC35uZSF2bJmnyZCrsWs3h+YZKKsLe9Tb5TfYduhNbBwvYef9XN64gA==" crossorigin="anonymous" />
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" th:href="@{/index}">Menu</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Insertar</a>
+              </li>
+             
+            
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+</header>
+<main>
+  <div class="container mt-4">
+
+    <div class="col  border-primary">
+      <form th:action="@{/save}" th:object="${persona}" method="POST">
+
+      <div class="card">
+        <div class="card-header">
+            <h3>Modulo de Registro de Personas</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+
+        <div class="mb-3">
+          <label for="id" class="form-label">ID</label>
+          <input type="number" th:field="*{idPersona}" class="form-control" name="id" placeholder="Id" readonly>
+        </div>
+       
+        <div class="mb-3">
+          <label for="name" class="form-label">nombre</label>
+          <input type="text" class="form-control" th:field="*{nombre}" name="nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Celular</label>
+          <input type="text" class="form-control" th:field="*{celular}" name="celular" required>
+        </div>
+        
+          </div>
+
+        </div>
+        <div class="card-footer">
+          <button type="submit" value="Guardar" class="btn btn-primary">Guardar</button>
+
+        </div>
+      </div>
+
+     
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+</main>
+<footer>
+
+</footer>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<script src="funciones.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
