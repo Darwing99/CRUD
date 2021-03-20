@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.CRUD.interfaceService.IPersonaService;
+import com.example.CRUD.interfaceService.IUsuariosService;
 import com.example.CRUD.model.Personas;
 
 
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping
 public class DemoController {
     @Autowired
+    private IUsuariosService userservice;
     private IPersonaService service;
 
       
@@ -60,6 +62,9 @@ public class DemoController {
             service.delete(idPersona);
             return "redirect:/listar";
         }
+
+
+        //CRUD PARA USUARIOS Y LOGUEO
         
 
 
