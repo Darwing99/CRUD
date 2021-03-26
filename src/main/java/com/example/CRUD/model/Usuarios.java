@@ -19,7 +19,7 @@ public class Usuarios {
     private String apellido;
     private String correo;
     private String password;
-    private String fecha;
+   
 
     public Usuarios(){
 
@@ -66,21 +66,15 @@ public class Usuarios {
         this.correo = correo;
     }
 
-    public String getFecha() {
-        return fecha;
-    }
+  
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public Usuarios(String id, String nombre, String apellido, String correo, String password, String fecha) {
+    public Usuarios(String id, String nombre, String apellido, String correo, String password) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.password = password;
-        this.fecha = fecha;
+      
     }
 
    

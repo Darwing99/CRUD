@@ -15,11 +15,12 @@ public class controlerAccion {
     public ModelAndView modelAndView(){
         return new ModelAndView("administrador/login");
     }
-
-    @GetMapping("/usuario")
-    public ModelAndView modelAndViewUser(){
-        return new ModelAndView("administrador/usuarios");
+    
+    @GetMapping("/inicio")
+    public ModelAndView Home(){
+        return new ModelAndView("index");
     }
+
 
     @PostMapping("/admin")
     public ModelAndView getHome(){

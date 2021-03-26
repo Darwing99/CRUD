@@ -9,7 +9,7 @@ import com.example.CRUD.interfaceService.IPersonaService;
 import com.example.CRUD.interfaceService.IUsuariosService;
 
 import com.example.CRUD.model.Personas;
-
+import com.example.CRUD.model.Usuarios;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,15 +22,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
 @Controller
 @RequestMapping
 public class DemoController { 
     
     @Autowired
+    private IUsuariosService user;
+     
+    @Autowired
     private IPersonaService service;
       
-        @GetMapping("listar")
+        @GetMapping("/listar")
         public ModelAndView listar( Model model) {
                List<Personas>personas=service.listar();
                model.addAttribute("persona", personas);
@@ -38,7 +40,6 @@ public class DemoController {
 
         }
        
-      
         @GetMapping("/new")
         public ModelAndView agregar(Model model){
             model.addAttribute("persona",new Personas());
@@ -64,6 +65,19 @@ public class DemoController {
         public ModelAndView Eliminar(@PathVariable int idPersona,Model model){
             service.delete(idPersona);
             return new ModelAndView("redirect:/listar");
+        }
+
+       
+        @GetMapping("/usuario")
+        public ModelAndView agregarUser(Model model){
+            model.addAttribute("usuario",new Usuarios());
+
+            return new ModelAndView("administrador/usuarios");
+        }
+        @PostMapping("/saveUser")
+        public ModelAndView saveUser(@Valid Usuarios u, Model model){
+          user.save(u);
+          return new ModelAndView("redirect:/usuario");   
         }
 
 
