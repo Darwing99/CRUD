@@ -7,14 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="r_usuarios")
 public class Usuarios {
 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
-    @Column(name="usuario",length = 50)
+    private int id;
+    @Column(name="nombre",length = 50)
     private String nombre;
     private String apellido;
     private String correo;
@@ -25,11 +26,11 @@ public class Usuarios {
 
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -39,8 +40,10 @@ public class Usuarios {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password =(password);
     }
+
+  
 
     public String getNombre() {
         return nombre;
@@ -68,7 +71,7 @@ public class Usuarios {
 
   
 
-    public Usuarios(String id, String nombre, String apellido, String correo, String password) {
+    public Usuarios(int id, String nombre, String apellido, String correo, String password) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
