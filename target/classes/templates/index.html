@@ -31,15 +31,15 @@
           </ul>
           <ul class="navbar-nav ml-auto nav-flex-icons">
             <li class="nav-item">
-              <a  th:href="@{/login}" href="personas/login.html" class="nav-link waves-effect waves-light">
+              <a  th:href="@{/login}" href="administrador/login.html" class="nav-link waves-effect waves-light">
                 Login
-                <i class="fab fa-twitter"></i>
+              
               </a>
             </li>
             <li class="nav-item">
-              <a th:href="@{/usuario}" class="nav-link waves-effect waves-light">
+              <a th:href="@{/usuario}" href="administrador/usuarios.html" class="nav-link waves-effect waves-light">
                 Sign Up
-                <i class="fab fa-google-plus-g"></i>
+               
               </a>
             </li>
           
@@ -59,11 +59,11 @@
             <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
             <div class="row">
               <div class="col">
-                <a  th:href="@{/login}" class="btn btn-primary btn-lg"  role="button">Log In</a>
+                <a  th:href="@{/login}"  href="administrador/login.html" class="btn btn-primary btn-lg"  role="button">Log In</a>
 
               </div>
               <div class="col">
-              <a  class="btn btn-primary btn-lg" th:href="@{/usuario}"  role="button">Sign Up</a>
+              <a  class="btn btn-primary btn-lg" th:href="@{/usuario}" href="administrador/usuarios.html"  role="button">Sign Up</a>
               </div>
 
             </div>

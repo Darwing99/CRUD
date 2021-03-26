@@ -34,15 +34,15 @@
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
         <li class="nav-item">
-          <a  th:href="@{/login}" href="personas/login.html" class="nav-link waves-effect waves-light">
+          <a  th:href="@{/login}" href="administrador/login.html" class="nav-link waves-effect waves-light">
             Login
-            <i class="fab fa-twitter"></i>
+        
           </a>
         </li>
         <li class="nav-item">
-          <a th:href="@{/usuario}" class="nav-link waves-effect waves-light">
+          <a th:href="@{/usuario}" href="administrador/usuarios.html" class="nav-link waves-effect waves-light">
             Sign Up
-            <i class="fab fa-google-plus-g"></i>
+         
           </a>
         </li>
       
@@ -84,7 +84,7 @@
                 
                 <div class="col-sm-4">
                     <button type="submit" class="btn btn-primary btn-lg" role="button">Guardar</button>
-                      <span>Ya tienes cuenta?<a  th:href="@{login}">Log In</a></span>
+                      <span>Ya tienes cuenta?<a  th:href="@{/login}">Log In</a></span>
                 </div>
               </div>
             

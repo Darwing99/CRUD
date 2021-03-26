@@ -1,6 +1,7 @@
 package com.example.CRUD.controller;
 
 
+import com.example.CRUD.config.Paginas;
 import com.example.CRUD.interfaceService.IUsuariosService;
 import com.example.CRUD.model.Usuarios;
 
@@ -19,22 +20,22 @@ public class controlerAccion {
     private IUsuariosService user;
     @GetMapping("/login")
     public ModelAndView modelAndView(){
-        return new ModelAndView("administrador/login");
+        return new ModelAndView(Paginas.LOGIN);
     }
     
     @GetMapping("/inicio")
     public ModelAndView Home(){
-        return new ModelAndView("index");
+        return new ModelAndView(Paginas.HOME);
     }
 
 
     @PostMapping("/admin")
     public ModelAndView getHome(){
-        return new ModelAndView("administrador/admin");
+        return new ModelAndView(Paginas.ADMIN);
     }
     @GetMapping("/admin")
     public ModelAndView getInicio(){
-        return new ModelAndView("administrador/admin");
+        return new ModelAndView(Paginas.ADMIN);
     }
 
     @GetMapping("/contact")
@@ -47,7 +48,7 @@ public class controlerAccion {
     public ModelAndView agregarUser(Model model){
         model.addAttribute("usuario",new Usuarios());
 
-        return new ModelAndView("administrador/usuarios");
+        return new ModelAndView(Paginas.USER);
     }
     @PostMapping("/saveUser")
     public ModelAndView saveUser(@Valid Usuarios u, Model model){
