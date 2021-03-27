@@ -37,7 +37,5 @@ public class controlerAccion {
     public ModelAndView getContac(){
         return new ModelAndView("informativa/contact");
     }
-
     
-
 }

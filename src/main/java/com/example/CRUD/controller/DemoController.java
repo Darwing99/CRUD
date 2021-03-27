@@ -30,7 +30,7 @@ public class DemoController {
         public ModelAndView listar( Model model) {
                List<Personas>personas=service.listar();
                model.addAttribute("persona", personas);
-               return new ModelAndView("administrador/listapersonas");
+               return new ModelAndView("/administrador/listapersonas");
 
         }
        
@@ -38,7 +38,7 @@ public class DemoController {
         public ModelAndView agregar(Model model){
             model.addAttribute("persona",new Personas());
 
-            return new ModelAndView("administrador/insert");
+            return new ModelAndView("/administrador/insert");
         }
         @GetMapping("/save")
         public ModelAndView save(@Valid Personas p, Model model){
@@ -51,7 +51,7 @@ public class DemoController {
         public ModelAndView editar(@PathVariable int idPersona, Model model){
            Optional<Personas>persona=service.listarId(idPersona);
            model.addAttribute("persona", persona); 
-           return new ModelAndView("administrador/insert");
+           return new ModelAndView("/administrador/insert");
 
         }
 
