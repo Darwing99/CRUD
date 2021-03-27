@@ -43,7 +43,7 @@ public class controllerUsuario {
 
     @PostMapping("/saveUser")
         public String save(@Valid Usuarios u, Model model){
-            user.save(p);
+            user.save(u);
             return "redirect:/listar";     
         }
 
