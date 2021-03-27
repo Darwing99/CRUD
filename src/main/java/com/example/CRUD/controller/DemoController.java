@@ -27,74 +27,39 @@ public class DemoController {
     private IPersonaService service;
       
         @GetMapping("/listar")
-        public String listar( Model model) {
-            List<Personas>personas=service.listar();
-            model.addAttribute("persona", personas);
-           return "administrador/listapersonas";
+        public ModelAndView listar( Model model) {
+               List<Personas>personas=service.listar();
+               model.addAttribute("persona", personas);
+               return new ModelAndView("administrador/listapersonas");
 
-     }
-        // public ModelAndView listar( Model model) {
-        //        List<Personas>personas=service.listar();
-        //        model.addAttribute("persona", personas);
-        //        return new ModelAndView("administrador/listapersonas");
-
-        // }
+        }
        
         @GetMapping("/new")
-        // public ModelAndView agregar(Model model){
-        //     model.addAttribute("persona",new Personas());
-
-        //     return new ModelAndView("administrador/insert");
-        // }
-
-        public String agregar(Model model){
+        public ModelAndView agregar(Model model){
             model.addAttribute("persona",new Personas());
 
-            return "administrador/insert";
+            return new ModelAndView("administrador/insert");
         }
-
-        // @GetMapping("/save")
-        // public ModelAndView save(@Valid Personas p, Model model){
-        //     service.save(p);
-        //     return new ModelAndView("redirect:/listar");   
-        // }
-        @PostMapping("/save")
-        public String save(@Valid Personas p, Model model){
+        @GetMapping("/save")
+        public ModelAndView save(@Valid Personas p, Model model){
             service.save(p);
-            return "redirect:/listar";     
+            return new ModelAndView("redirect:/listar");   
         }
-
 
         @GetMapping("/editar/{idPersona}")
 
-        // public ModelAndView editar(@PathVariable int idPersona, Model model){
-        //    Optional<Personas>persona=service.listarId(idPersona);
-        //    model.addAttribute("persona", persona); 
-        //    return new ModelAndView("administrador/insert");
+        public ModelAndView editar(@PathVariable int idPersona, Model model){
+           Optional<Personas>persona=service.listarId(idPersona);
+           model.addAttribute("persona", persona); 
+           return new ModelAndView("administrador/insert");
 
-        // }
-
-        public String editar(@PathVariable int idPersona, Model model){
-            Optional<Personas>persona=service.listarId(idPersona);
-            model.addAttribute("persona", persona); 
-            return "administrador/insert";
- 
-         }
-
-        // @GetMapping("/eliminar/{idPersona}")
-        // public ModelAndView Eliminar(@PathVariable int idPersona,Model model){
-        //     service.delete(idPersona);
-        //     return new ModelAndView("redirect:/listar");
-        // }
-        
-        @GetMapping("/eliminar/{idPersona}")
-        public String Eliminar(@PathVariable int idPersona,Model model){
-            service.delete(idPersona);
-            return "redirect:/listar";
         }
 
-        
-
+        @GetMapping("/eliminar/{idPersona}")
+        public ModelAndView Eliminar(@PathVariable int idPersona,Model model){
+            service.delete(idPersona);
+            return new ModelAndView("redirect:/listar");
+        }
 
 
 }
