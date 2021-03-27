@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RestController
 @RequestMapping
 public class DemoController { 
     
-   
-     
     @Autowired
     private IPersonaService service;
       
@@ -63,8 +63,7 @@ public class DemoController {
             return new ModelAndView("redirect:/listar");
         }
 
-       //guardando usuarios
-
+      
 
 
 }
