@@ -24,16 +24,16 @@ public class controlerAccion {
     }
 
 
-    @PostMapping("/admin")
+    @GetMapping("/admin")
     public ModelAndView getHome(){
         return new ModelAndView(Paginas.ADMIN);
     }
-    @GetMapping("/admin")
+    @PostMapping("/admin")
     public ModelAndView getInicio(){
         return new ModelAndView(Paginas.ADMIN);
     }
 
-    @GetMapping("/contact")
+    @PostMapping("/contact")
     public ModelAndView getContac(){
         return new ModelAndView("informativa/contact");
     }
