@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 
-@RequestMapping
+@RequestMapping("/")
 public class controlerAccion {
   
     @GetMapping("/login")

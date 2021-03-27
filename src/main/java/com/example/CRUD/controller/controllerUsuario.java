@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping
+@RequestMapping("/")
 public class controllerUsuario {
     @Autowired
     private IUsuariosService user;
