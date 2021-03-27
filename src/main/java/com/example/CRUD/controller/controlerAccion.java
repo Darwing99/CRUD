@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RestController
+
 @RequestMapping
 public class controlerAccion {
     @Autowired
