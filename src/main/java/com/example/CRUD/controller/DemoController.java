@@ -40,7 +40,7 @@ public class DemoController {
 
             return new ModelAndView("/administrador/insert");
         }
-        @GetMapping("/save")
+        @PostMapping("/save")
         public ModelAndView save(@Valid Personas p, Model model){
             service.save(p);
             return new ModelAndView("redirect:/listar");   
