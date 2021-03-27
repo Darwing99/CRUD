@@ -18,15 +18,33 @@ import org.springframework.web.servlet.ModelAndView;
 public class controllerUsuario {
     @Autowired
     private IUsuariosService user;
+
+    // @GetMapping("/usuario")
+    // public ModelAndView agregarUser(Model model){
+    //     model.addAttribute("usuario",new Usuarios());
+
+    //     return new ModelAndView(Paginas.USER);
+    // }
+
     @GetMapping("/usuario")
-    public ModelAndView agregarUser(Model model){
+    public String agregar(Model model){
         model.addAttribute("usuario",new Usuarios());
 
-        return new ModelAndView(Paginas.USER);
+        return "administrador/usuarios";
     }
+
+
+    // @PostMapping("/saveUser")
+    // public ModelAndView saveUser(@Valid Usuarios u, Model model){
+    //   user.save(u);
+    //   return new ModelAndView("redirect:/usuario");   
+    // }
+
+
     @PostMapping("/saveUser")
-    public ModelAndView saveUser(@Valid Usuarios u, Model model){
-      user.save(u);
-      return new ModelAndView("redirect:/usuario");   
-    }
+        public String save(@Valid Usuarios u, Model model){
+            user.save(p);
+            return "redirect:/listar";     
+        }
+
 }
